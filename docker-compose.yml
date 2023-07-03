@@ -30,7 +30,7 @@ services:
       - PG_PASSWORD=nddr6444
       - PG_DB=djdb
       - PG_PORT=5432
-      - PG_HOST=db
+      - PG_HOST=dblocalhost
     depends_on:
       - db
 
