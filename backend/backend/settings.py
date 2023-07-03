@@ -75,10 +75,10 @@ DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
        'USER': 'root',
-       'PASSWORD': 'nddr6444',
+       'PASSWORD': 'ndd$5DH%623^&67326^hfd_^&r64*jd44',
        'NAME': 'djdb',
        'PORT': '5432',
-       'HOST': 'dblocalhost',
+       'HOST': 'db',
    }
 }
 # DATABASES = {
