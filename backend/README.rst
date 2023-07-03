@@ -3,7 +3,6 @@ django app
 
 Usage
 -----
-(предварительно установить docker и docker compose)
 .. code-block:: console
 
    git clone https://github.com/MartellOnell/djangoRestApp.git
