@@ -10,4 +10,5 @@ Usage
    sudo lsof -i :5432
    echo "если порт занят каким либо процессом, то смотрим его pid"
    sudo kill <pid>
-   sudo ./start.sh
+   chmod 777 ./start.sh
+   ./start.sh
