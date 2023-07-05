@@ -4,11 +4,11 @@ django app
 Usage
 -----
 .. code-block:: console
-
-   git clone https://github.com/MartellOnell/djangoRestApp.git
+   
+   sudo git clone https://github.com/MartellOnell/djangoRestApp.git
    cd djangoRestApp
-   lsof -i :5432
+   sudo lsof -i :5432
    echo "если порт занят каким либо процессом, то смотрим его pid"
-   kill <pid>
-   sudo docker compose build
-   sudo docker compose up
+   sudo kill <pid>
+   chmod 777 ./start.sh
+   ./start.sh
