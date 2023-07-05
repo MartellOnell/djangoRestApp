@@ -9,7 +9,7 @@ from .serializers import (
     CommentSerializer, 
     UnderCommentSerializer
 )
-
+import json
 
 # (important!) using params safe <JsonResponse(..., safe=<boolean>)> 
 # in case where data is massive use true, in another case use false (default - true)
@@ -210,3 +210,25 @@ def undercomment_obj(request, car_pk, comm_pk, pk):
     elif request.method == 'DELETE':
         undercomment.delete()
         return JsonResponse("object was successfully deleted", status=204)        
+
+
+def get_full_trhead(request, pk): # pk = car_pk
+    try:
+        car = Car.objects.get(pk=pk)
+
+    except car.DoesNotExist:
+        return HttpResponse(status=404)
+    
+    if request.method == 'GET':
+        data = car
+        comments = Comment.objects.filter(car_id=data.pk)
+        data.comms = comments
+        i = 0
+        for comm in comments:
+            undercomments = UnderComment.objects.filter(comm_id=comm.pk)
+            data.comms[i].append(undercomments)
+            i += 1
+        data_json = json.dumps(data.__dict__)
+
+        return JsonResponse(data_json)
+    

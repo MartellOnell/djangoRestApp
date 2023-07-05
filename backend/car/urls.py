@@ -10,7 +10,7 @@ urlpatterns = [
     path('car/', views.car_create, name='carCreate'), # create car obj
     path('<int:upk>/car/<int:pk>/', views.car_obj, name='carObj'),
     # ^^ put, delete and get car (for owner)
-    path('car/<int:pk>/', views.car_obj_spectate, name='carObjSpect'),
+    path('car_old/<int:pk>/', views.car_obj_spectate, name='carObjSpect'),
     # ^^ get car for all users
     path('car/<int:car_pk>/comments/', views.comment_list, name='comList'),
     # ^^ get comm list on current car (car_pk == current car id)
@@ -40,6 +40,7 @@ urlpatterns = [
         '<int:upk>/car/<int:car_pk>/comment/<int:comm_pk>/undercomment/<int:pk>',
         views.undercomment_obj,
         name='ucomObj',
-    )
+    ),
     # ^^ put, delete and get undercomm (for owner), (pk == current undercomm id)
+    path('car/<int:pk>', views.get_full_trhead, name='fullThread'),
 ]
