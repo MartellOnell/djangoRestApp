@@ -37,10 +37,10 @@ urlpatterns = [
     ),
     # ^^ create undercomm on current comm
     path(
-        '<int:upk>/car/<int:car_pk>/comment/<int:comm_pk>/undercomment/<int:pk>',
+        '<int:upk>/car/<int:car_pk>/comment/<int:comm_pk>/undercomment/<int:pk>/',
         views.undercomment_obj,
         name='ucomObj',
     ),
     # ^^ put, delete and get undercomm (for owner), (pk == current undercomm id)
-    path('car/<int:pk>', views.get_full_trhead, name='fullThread'),
+    path('car/<int:pk>/', views.get_full_trhead, name='fullThread'),
 ]
