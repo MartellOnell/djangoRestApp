@@ -2,6 +2,7 @@ django app
 ==========
 
 Usage
+(warning: download docker, docker compose and nginx)
 -----
 .. code-block:: console
    

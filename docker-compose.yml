@@ -8,6 +8,8 @@ services:
       - POSTGRES_USER=root
       - POSTGRES_DB=djdb
       - POSTGRES_PASSWORD=ndd$5DH%623^&67326^hfd_^&r64*jd44
+    volumes:
+      - pgdata1:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     healthcheck:
@@ -21,10 +23,15 @@ services:
     container_name: backend
     build: ./backend
     ports:
-      - "8000:8000"
+      - "8080:80"
     depends_on:
       - db
 
   frontend:
     container_name: frontend
     build: ./frontend
+    ports:
+      - "80:80"
+      
+volumes:
+  pgdata1: {}
