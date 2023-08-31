@@ -1,8 +1,7 @@
-django app
+django app (in progress, not work)
 ==========
 
 Usage
-(warning: download docker, docker compose and nginx)
 -----
 .. code-block:: console
    
